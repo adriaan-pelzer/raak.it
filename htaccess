@@ -1,0 +1,28 @@
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName raak.it
+AuthUserFile /home/raakit/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/raakit/public_html/_vti_pvt/service.grp
+RewriteEngine on
+RewriteRule ^index.php$ - [L]
+RewriteRule ^$ - [L]
+RewriteRule ^.*\.css$ - [L]
+RewriteRule ^retrieve\.php.*$ - [L]
+RewriteRule ^redir\.php.*$ - [L]
+RewriteRule ^register\.php.*$ - [L]
+RewriteRule ^stats\.php.*$ - [L]
+RewriteRule ^result\.php.*$ - [L]
+RewriteRule ^404\..*$ - [L]
+RewriteRule ^/?([^/]*)/?$ /redir.php?shorturl=$1 [R]
+
