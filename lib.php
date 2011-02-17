@@ -112,7 +112,7 @@ function validateurl($url, $testscheme=true) {
     curl_close($ch);
     preg_match("/HTTP\/1\.[1|0]\s(\d{3})/",$data,$matches);
     $code = $matches[1];
-    if (!(preg_match("/<[Tt][Ii][Tt][Ll][Ee]>(.*)<\/[Tt][Ii][Tt][Ll][Ee]>/", $data, $matches))) {
+    if (!(preg_match("/<[Tt][Ii][Tt][Ll][Ee]>\s*(.*)\s*<\/[Tt][Ii][Tt][Ll][Ee]>/", $data, $matches))) {
         $title = NULL;
     } else {
         $title = $matches[1];
